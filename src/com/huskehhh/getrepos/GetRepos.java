@@ -23,6 +23,7 @@ public class GetRepos {
     private static void cloneRepo(String clone, String user, String reponame) {
         try {
             Process cloneRepo = Runtime.getRuntime().exec("git clone " + clone + " GitHub/" + user + "/" + reponame);
+            System.out.println("Cloning '" + reponame + "' from user '" + user + "'!");
         } catch (IOException e) {
             e.printStackTrace();
         }
