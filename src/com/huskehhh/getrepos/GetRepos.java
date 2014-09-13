@@ -12,7 +12,7 @@ public class GetRepos {
         try {
             for (Repository repo : service.getRepositories(args[0])) {
                 String clone = repo.getCloneUrl();
-                cloneRepo(clone);
+                cloneRepo(clone, args[0], repo.getName());
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -20,9 +20,9 @@ public class GetRepos {
 
     }
 
-    private static void cloneRepo(String clone) {
+    private static void cloneRepo(String clone, String user, String reponame) {
         try {
-            Process cloneRepo = Runtime.getRuntime().exec("git clone " + clone);
+            Process cloneRepo = Runtime.getRuntime().exec("git clone " + clone + " " + user + "/" + reponame);
         } catch (IOException e) {
             e.printStackTrace();
         }
