@@ -19,6 +19,13 @@
             <artifactId>org.eclipse.egit.github.core</artifactId>
             <version>2.1.5</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.2</version>
+            <type>jar</type>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <repositories>
@@ -59,6 +66,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>org.eclipse.mylyn.github:org.eclipse.egit.github.core</include>
+                                    <include>com.google.code.gson:gson</include>
                                 </includes>
                             </artifactSet>
                         </configuration>
